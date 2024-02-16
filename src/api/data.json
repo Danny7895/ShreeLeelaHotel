@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "proImg": "../../images/room/single-delux.jpg",
+    "title": "Deluxe Rooms",
+    "price": "200",
+    "delPrice": "380",
+    "sqm":"20x12",
+    "bedroom":"2",
+    "bathroom":"1",
+    "capacity":"2",
+    "Children":"6"
+  },
+  {
+    "id": 6,
+    "proImg": "../images/room/single-suite.jpg",
+    "title": "Suite Rooms",
+    "price": "230",
+    "sqm":"82",
+    "bedroom":"2",
+    "bathroom":"1",
+    "delPrice": "380",
+    "capacity":"3",
+    "Children":"5"
+  },
+  {
+    "id": 3,
+    "proImg": "../images/room/single-premium.jpg",
+    "title": "Premium Rooms",
+    "price": "200",
+    "delPrice": "380",
+    "sqm":"20x12",
+    "bedroom":"2",
+    "bathroom":"1",
+    "capacity":"2",
+    "Children":"6"
+  },
+  {
+    "id": 2,
+    "proImg": "../images/room/double-delux.jpg",
+    "title": "Double Deluxe Room",
+    "price": "200",
+    "delPrice": "380",
+    "sqm":"32.5x12",
+    "bedroom":"2",
+    "bathroom":"1",
+    "capacity":"2",
+    "Children":"6"
+  },
+  {
+    "id": 4,
+    "proImg": "../images/room/double-premium.jpg",
+    "title": "Double Premium Room",
+    "price": "200",
+    "delPrice": "380",
+    "sqm":"32.5x12",
+    "bedroom":"2",
+    "bathroom":"1",
+    "capacity":"2",
+    "Children":"6"
+  },
+  {
+    "id": 5,
+    "proImg": "../images/room/boutique.jpg",
+    "title": "Boutique Twin Room",
+    "price": "250",
+    "delPrice": "380",
+    "sqm":"70",
+    "bedroom":"2",
+    "bathroom":"1",
+    "capacity":"2",
+    "Children":"3"
+  },
+  {
+    "id": 6,
+    "proImg": "../images/room/single-suite.jpg",
+    "title": "Single Suite ",
+    "price": "230",
+    "sqm":"82",
+    "bedroom":"2",
+    "bathroom":"1",
+    "delPrice": "380",
+    "capacity":"3",
+    "Children":"5"
+  },
+  {
+    "id": 7,
+    "proImg": "../images/room/double-premium.jpg",
+    "title": "Queen Suite",
+    "price": "280",
+    "sqm":"45",
+    "bedroom":"2",
+    "bathroom":"1",
+    "delPrice": "380",
+    "capacity":"3",
+    "Children":"2"
+  } 
+]
