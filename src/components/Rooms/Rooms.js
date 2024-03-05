@@ -29,8 +29,8 @@ const Rooms = () => {
                 <div className="col-lg-4 col-md-6 col-12" key={pitem}>
                   <div className="room-item">
                     <div className="room-img">
-                      <img src={require("../../images/room/single-delux.jpg")} alt="rooms" />
-                      {/* <img src={product.proImg} alt="rooms" /> */}
+                      <img src={require(`../../images/room/${product.proImg}`)} alt="rooms" />
+                      {/* <p>{product.proImg}</p> */}
                     </div>
                     <div className="room-content">
                       <h2><Link onClick={ClickHandler} to={`/room-single/${product.id}`}>{product.title}</Link></h2>

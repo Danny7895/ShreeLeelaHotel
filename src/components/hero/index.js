@@ -5,9 +5,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import hero1 from '../../images/slider/slide-1.avif'
-import hero2 from '../../images/slider/slide-2.avif'
-import hero3 from '../../images/slider/slide-3.avif'
+import hero1 from '../../images/slider/slider-1.jpeg'
+import hero2 from '../../images/slider/slider-2.jpeg'
+import hero3 from '../../images/slider/slider-3.jpeg'
 
 const Hero = (props) => {
     return (
@@ -35,7 +35,7 @@ const Hero = (props) => {
                                             </div>
                                             <div className="clearfix"></div>
                                             <div data-swiper-parallax="500" className="slide-btns">
-                                                <a href="room.html" className="theme-btn">Book Now</a>
+                                                <a href="/room" className="theme-btn">Book Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -48,11 +48,12 @@ const Hero = (props) => {
                                     <div className="container-fluid">
                                         <div className="slide-content">
                                             <div data-swiper-parallax="300" className="slide-title">
-                                                <h2>Find Your Perfect Place To Stay</h2>
+                                                <h2>Crafting Love Stories.
+                                                </h2>
                                             </div>
                                             <div className="clearfix"></div>
                                             <div data-swiper-parallax="500" className="slide-btns">
-                                                <a href="room.html" className="theme-btn">Book Now</a>
+                                                <a href="/room" className="theme-btn">Book Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -65,11 +66,11 @@ const Hero = (props) => {
                                     <div className="container-fluid">
                                         <div className="slide-content">
                                             <div data-swiper-parallax="300" className="slide-title">
-                                                <h2>Find Your Perfect Place To Stay</h2>
+                                                <h2>Begin Your Fairytale Life Here.</h2>
                                             </div>
                                             <div className="clearfix"></div>
                                             <div data-swiper-parallax="500" className="slide-btns">
-                                                <a href="room.html" className="theme-btn">Book Now</a>
+                                                <a href="/room" className="theme-btn">Book Now</a>
                                             </div>
                                         </div>
                                     </div>
