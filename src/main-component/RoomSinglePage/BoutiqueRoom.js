@@ -8,7 +8,7 @@ import rv2 from '../../images/room/r2.jpg'
 import RoomSidebar from './RoomSidebar'
 import Amenities from '../../api/amenities'
 
-const RoomDetails = (props) => {
+const BoutiqueRooms = (props) => {
 
     const SubmitHandler = (e) => {
         e.preventDefault()
@@ -51,16 +51,14 @@ const RoomDetails = (props) => {
                                                     <h2>Amenities</h2>
                                                 </div>
                                                 <ul>
-                                                {Amenities.slice(0,1).map((amenities, aitem) => (
-                                        <li key={aitem}><Link onClick={ClickHandler} to={`/service-single/${amenities.id}`}>{amenities.title}</Link></li>
-                                    ))}
-                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Refrigerator and water</Link></li>
+                                          
+                                                    {/* <li><Link onClick={ClickHandler} to="/room-single/1">Refrigerator and water</Link></li> */}
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">Air Conditioner Facilities</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Fruits are always available</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/room-single/1">2 Sets of nightwear</Link></li>
+                                                    {/* <li><Link onClick={ClickHandler} to="/room-single/1">Fruits are always available</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/room-single/1">2 Sets of nightwear</Link></li> */}
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">Tables and Chairs</Link></li>
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">2 Elevator Available</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Room Side Belcony</Link></li>
+                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Room Side Balcony</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -81,12 +79,12 @@ const RoomDetails = (props) => {
                                                 </div>
                                                 <ul>
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">Daily Cleaning</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Special Swimming Pool</Link></li>
+                                                    {/* <li><Link onClick={ClickHandler} to="/room-single/1">Special Swimming Pool</Link></li> */}
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">Free Parking</Link></li>
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">Free-to-use smartphone </Link></li>
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">Free Wifi</Link></li>
                                                     <li><Link onClick={ClickHandler} to="/room-single/1">2 Elevator Available</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Room Side Belcony</Link></li>
+                                                    <li><Link onClick={ClickHandler} to="/room-single/1">Room Side Balcony</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -247,4 +245,4 @@ const RoomDetails = (props) => {
     )
 }
 
-export default RoomDetails;
+export default BoutiqueRooms;

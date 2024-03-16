@@ -24,16 +24,16 @@
     "Children":"6"
   },
   {
-    "id": 2,
+    "id": 5,
     "proImg": "double-delux.jpg",
-    "title": "Double Deluxe Room",
-    "price": "2500+12% GST",
+    "title": "Boutique Twin Room",
+    "price": "4000+12% GST",
     "delPrice": "380",
-    "sqm":"20x12",
+    "sqm":"32.5x12",
     "bedroom":"2",
     "bathroom":"1",
     "capacity":"2",
-    "Children":"6"
+    "Children":"3"
   },
   {
     "id": 6,
@@ -59,18 +59,7 @@
     "capacity":"2",
     "Children":"6"
   },
-  {
-    "id": 5,
-    "proImg": "boutique.jpg",
-    "title": "Boutique Twin Room",
-    "price": "4000+12% GST",
-    "delPrice": "380",
-    "sqm":"32.5x12",
-    "bedroom":"2",
-    "bathroom":"1",
-    "capacity":"2",
-    "Children":"3"
-  },
+  
   {
     "id": 6,
     "proImg": "single-suite.jpg",

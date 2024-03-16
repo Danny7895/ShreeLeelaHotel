@@ -58,7 +58,7 @@ const Rooms = () => {
                                 <div className="room-item" key={pitem}>
                                     <div className="room-img">
                                         <Zoom>
-                                            <img src={product.proImg} alt="products" />
+                                            <img src={require(`../../images/room/${product.proImg}`)} alt="products" />
                                         </Zoom>
                                     </div>
                                 </div>

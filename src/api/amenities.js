@@ -19,11 +19,11 @@ import singleImg7 from '../images/service-single/7.jpg'
 
 
 
-const Services = [
+const Amenities = [
     {
         id: '1',
         fIcon:'flaticon-food-tray',
-        title:'Delicious Food',
+        title:'Refrigerator and water',
         description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
         simg1:simg1,
         ssImg:singleImg1,
@@ -85,4 +85,4 @@ const Services = [
         ssImg:singleImg1,
     }
 ]
-export default Services;
+export default Amenities;
