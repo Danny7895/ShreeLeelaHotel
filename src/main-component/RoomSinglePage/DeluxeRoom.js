@@ -172,7 +172,7 @@ const DeluxeRooms = (props) => {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="add-review"> */}
+                        <div className="add-review">
                             <div className="room-title">
                                 <h2>Add Review</h2>
                             </div>
