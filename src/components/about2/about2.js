@@ -22,7 +22,7 @@ const About2 = (props) => {
                             <div className="wpo-about-content">
                                 <div className="about-title">
                                     <span>Exclusive Offer</span>
-                                    <h2>Enjoy Your Dream Vacation In switzerland</h2>
+                                    <h2>Enjoy Your Luxurious Vacation In ShreeLeela Hotel</h2>
                                 </div>
                                 <div className="wpo-about-content-inner">
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -42,7 +42,7 @@ const About2 = (props) => {
                                         </div>
                                         <div className="about-info-right">
                                             <p>Only</p>
-                                            <h3>$2500</h3>
+                                            <h3>Rs 2500</h3>
                                         </div>
                                     </div>
                                     <Link className="theme-btn" onClick={ClickHandler} to='/room'>Book Now</Link>

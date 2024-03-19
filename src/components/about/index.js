@@ -16,7 +16,7 @@ const About = (props) => {
                             <div className="wpo-about-content">
                                 <div className="about-title">
                                     <span>Exclusive Offer</span>
-                                    <h2>Enjoy Your Dream Vacation In switzerland</h2>
+                                    <h2>Enjoy Luxurious Vacation In ShreeLeela Hotel</h2>
                                 </div>
                                 <div className="wpo-about-content-inner">
                                     <div className="about-info-wrap">
@@ -32,7 +32,7 @@ const About = (props) => {
                                         </div>
                                         <div className="about-info-right">
                                             <p>Only</p>
-                                            <h3>$2500</h3>
+                                            <h3>Rs 4000</h3>
                                         </div>
                                         <Link onClick={ClickHandler} className="theme-btn" to="/room">Book Now</Link>
                                     </div>

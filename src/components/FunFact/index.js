@@ -2,11 +2,11 @@ import React from 'react'
 
 const funFact = [
   {
-      title: '302+',
+      title: '49+',
       subTitle: 'Room & Suites',
   },
   {
-      title: '25',
+      title: '1',
       subTitle: 'Restaurant',
   },
   {
@@ -14,7 +14,7 @@ const funFact = [
       subTitle: 'Exceptional Food',
   },
   {
-      title: '35',
+      title: '5',
       subTitle: 'Destination',
   },
 
