@@ -5,7 +5,11 @@ import simg4 from '../images/service/img-4.jpg'
 import simg5 from '../images/service/img-5.jpg'
 import simg6 from '../images/service/img-6.jpg'
 import simg7 from '../images/service/img-7.jpg'
-
+import wifi from '../images/service/wifi.jpg'
+import food from '../images/service/food.jpg'
+import other from '../images/service/other_service.jpg'
+import parking from '../images/service/parking.jpg'
+import breakfast from '../images/service/breakfast.jpg'
 import singleImg1 from '../images/service-single/1.jpg'
 import singleImg2 from '../images/service-single/2.jpg'
 import singleImg3 from '../images/service-single/3.jpg'
@@ -25,7 +29,7 @@ const Services = [
         fIcon:'flaticon-food-tray',
         title:'Delicious Food',
         description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
-        simg1:simg1,
+        simg1:food,
         ssImg:singleImg1,
     },
     {
@@ -33,7 +37,7 @@ const Services = [
         fIcon:'flaticon-parking',
         title:'Parking Area',
         description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
-        simg1:simg2,
+        simg1:parking,
         ssImg:singleImg2,
     },
     // {
@@ -52,20 +56,20 @@ const Services = [
     //     simg1:simg4,
     //     ssImg:singleImg4,
     // },
-    {
-        id: '5',
-        fIcon:'flaticon-dumbell',
-        title:'Exercise Space',
-        description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
-        simg1:simg5,
-        ssImg:singleImg5,
-    },
+    // {
+    //     id: '5',
+    //     fIcon:'flaticon-dumbell',
+    //     title:'Exercise Space',
+    //     description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
+    //     simg1:simg5,
+    //     ssImg:singleImg5,
+    // },
     {
         id: '6',
         fIcon:'flaticon-wifi',
         title:'Free Wifi',
         description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
-        simg1:simg6,
+        simg1:wifi,
         ssImg:singleImg6,
     },
     {
@@ -73,7 +77,7 @@ const Services = [
         fIcon:'flaticon-cappuccino',
         title:'Breakfast',
         description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
-        simg1:simg7,
+        simg1:breakfast,
         ssImg:singleImg7,
     },
     {
@@ -81,7 +85,7 @@ const Services = [
         fIcon:'flaticon-more',
         title:'Other Service',
         description:'Excepteur sint occaecat proident, sunt in culpa mollit est aborum.',
-        simg1:simg1,
+        simg1:other,
         ssImg:singleImg1,
     }
 ]
