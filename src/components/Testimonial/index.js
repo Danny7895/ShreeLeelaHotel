@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import test1 from '../../images/testimonial/img-1.jpg'
-import test2 from '../../images/testimonial/img-2.jpg'
-import test3 from '../../images/testimonial/img-3.jpg'
+import test1 from '../../images/testimonial/img-1.png'
+import test2 from '../../images/testimonial/img-1.png'
+import test3 from '../../images/testimonial/img-1.png'
 
 
 
@@ -14,21 +14,21 @@ import test3 from '../../images/testimonial/img-3.jpg'
 const Testimonials = [
     {
         tstImg: test1,
-        name: 'Elezabeth Marvel',
+        name: 'Rahul',
         title: 'Photographer',
-        descriptoion: 'Lorem ipsum dolor sit amet, consectetur adiping elit, do eiusmod tempor incididunt ut labore et doliore magna aliqjtua. Quis ipsum suspendisse ultrices gravida. Risus commodo maepac cenas.',
+        descriptoion: 'My recent stay at Shree Leela Hotel was absolutely fantastic! From the moment I arrived, I was greeted with warm smiles and impeccable service from the staff. The check-in process was smooth and efficient, and I was pleasantly surprised by the attention to detail throughout the hotel.',
     },
     {
         tstImg: test2,
-        name: 'Marry Jenefer',
-        title: 'CEO Of Golden Bravo',
-        descriptoion: 'Lorem ipsum dolor sit amet, consectetur adiping elit, do eiusmod tempor incididunt ut labore et doliore magna aliqjtua. Quis ipsum suspendisse ultrices gravida. Risus commodo maepac cenas.',
+        name: 'Mayank',
+        title: 'Traveller',
+        descriptoion: 'The room itself was spacious, clean, and beautifully decorated, providing a comfortable retreat after a long day of exploring the city. The bed was plush and inviting, ensuring a restful nights sleep. I also appreciated the modern amenities, including a flat-screen TV, complimentary Wi-Fi, and a well-stocked minibar',
     },
     {
         tstImg: test3,
-        name: 'William Robert',
-        title: 'CEO Of Bexima',
-        descriptoion: 'Lorem ipsum dolor sit amet, consectetur adiping elit, do eiusmod tempor incididunt ut labore et doliore magna aliqjtua. Quis ipsum suspendisse ultrices gravida. Risus commodo maepac cenas.',
+        name: 'Sarita',
+        title: 'Bussiness Women',
+        descriptoion: 'One of the highlights of my stay was the dining experience at the hotels restaurant. The food was delicious and beautifully presented, with a diverse menu featuring both local and international cuisine. The breakfast buffet was particularly impressive, offering a wide selection of fresh fruits, pastries, and made-to-order dishes.',
     },
 ]
 

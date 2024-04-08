@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PrImg1 from '../../images/pricing/1.jpg'
-import PrImg2 from '../../images/pricing/2.jpg'
-import PrImg3 from '../../images/pricing/3.jpg'
+import PrImg1 from '../../images/room/product images/premium2.jpeg'
+import PrImg2 from '../../images/room/product images/suite.jpg'
+import PrImg3 from '../../images/room/product images/unnamed3.jpeg'
 import SectionTitleS2 from '../SectionTitleS2'
 
 
@@ -10,7 +10,7 @@ const Pricing = [
     {
         prImg: PrImg1,
         pakage: 'Basic Package',
-        price: '250',
+        price: '2500',
         subs: 'Night',
         l1: 'Altime Free Wifi',
         l2: '2 People Breakfast',
@@ -20,7 +20,7 @@ const Pricing = [
     {
         prImg: PrImg2,
         pakage: 'Standard Package',
-        price: '450',
+        price: '4500',
         subs: 'Night',
         l1: 'Altime Free Wifi',
         l2: '2 People Breakfast',
@@ -30,7 +30,7 @@ const Pricing = [
     {
         prImg: PrImg3,
         pakage: 'Luxary Package',
-        price: '650',
+        price: '6000',
         subs: 'Night',
         l1: 'Altime Free Wifi',
         l2: '2 People Breakfast',
@@ -64,7 +64,7 @@ const PricingSection = (props) => {
                                         </div>
                                         <div className="wpo-pricing-text">
                                             <h4>{pricing.pakage}</h4>
-                                            <h2>${pricing.price}<span>/Per {pricing.subs}</span></h2>
+                                            <h2>Rs {pricing.price}<span>/Per {pricing.subs}</span></h2>
                                         </div>
                                     </div>
                                     <div className="wpo-pricing-bottom">
