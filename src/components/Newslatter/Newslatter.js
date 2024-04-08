@@ -4,6 +4,8 @@ import Shape2 from '../../images/nshape2.png'
 
 const SubmitHandler = (e) => {
     e.preventDefault()
+
+  //x  3fcd2077dd07730814216522a2f33b8c-us18s
 }
 
 const Newslatter = (props) => {

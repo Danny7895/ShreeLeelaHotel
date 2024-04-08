@@ -39,7 +39,7 @@ const Rooms = () => {
                         <li><i className="fi flaticon-bed"></i>{product.bedroom} Bed</li>
                         <li><i className="fi flaticon-bathtub"></i>{product.bathroom} Bathroom</li>
                       </ul>
-                      <h3>${product.price} <span>/ Night</span></h3>
+                      <h3>Rs {product.price} <span>/ Night</span></h3>
                     </div>
                   </div>
                 </div>
