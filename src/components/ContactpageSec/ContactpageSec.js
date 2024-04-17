@@ -34,7 +34,7 @@ const ContactpageSec = () => {
                                         <div className="office-info-text">
                                             <h2>Email Us</h2>
                                             <p>ShreeLeela@gmail.com</p>
-                                            {/* <p>helloyou@gmail.com</p> */}
+                                           
                                         </div>
                                     </div>
                                 </div> 
@@ -47,8 +47,8 @@ const ContactpageSec = () => {
                                         </div>
                                         <div className="office-info-text">
                                             <h2>Call Now</h2>
-                                            <p>+91 8001 234567</p>
-                                            {/* <p>+1 800 123 654 987</p> */}
+                                            <p>+91 8001234567</p>
+                                            
                                         </div>
                                     </div>
                                 </div> 
@@ -56,7 +56,7 @@ const ContactpageSec = () => {
                         </div>
                         <div className="wpo-contact-title">
                             <h2>Have Any Question?</h2>
-                            <p>It is a long established fact that a reader will be distracted
+                            <p>It is a long established fact, a reader will be distracted
                                 content of a page when looking.</p>
                         </div>
                         <div className="wpo-contact-form-area">
