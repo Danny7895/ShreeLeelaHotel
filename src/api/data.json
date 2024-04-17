@@ -12,6 +12,18 @@
     "Children":"6"
   },
   {
+    "id": 6,
+    "proImg": "single-suite.jpg",
+    "title": "Suite Rooms",
+    "price": "5000+12% GST",
+    "sqm":"34x12",
+    "bedroom":"2",
+    "bathroom":"1",
+    "delPrice": "380",
+    "capacity":"3",
+    "Children":"5"
+  },
+  {
     "id": 3,
     "proImg": "single-premium.jpeg",
     "title": "Premium Rooms",
@@ -35,18 +47,7 @@
     "capacity":"2",
     "Children":"3"
   },
-  {
-    "id": 6,
-    "proImg": "single-suite.jpg",
-    "title": "Suite Rooms",
-    "price": "5000+12% GST",
-    "sqm":"34x12",
-    "bedroom":"2",
-    "bathroom":"1",
-    "delPrice": "380",
-    "capacity":"3",
-    "Children":"5"
-  },
+
   {
     "id": 4,
     "proImg": "double-premium.jpg",
@@ -59,21 +60,8 @@
     "capacity":"2",
     "Children":"6"
   },
-  
   {
-    "id": 6,
-    "proImg": "single-suite.jpg",
-    "title": "Single Suite ",
-    "price": "5000+12% GST",
-    "sqm":"34x12",
-    "bedroom":"2",
-    "bathroom":"1",
-    "delPrice": "380",
-    "capacity":"3",
-    "Children":"5"
-  },
-  {
-    "id": 7,
+    "id": 2,
     "proImg": "double-premium.jpg",
     "title": "Queen Suite",
     "price": "3500+12% GST",
