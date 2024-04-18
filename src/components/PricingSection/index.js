@@ -50,7 +50,7 @@ const PricingSection = (props) => {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-xl-6">
-                        <SectionTitleS2 MainTitle={'Our Awesome Packages'} />
+                        <SectionTitleS2 MainTitle={'Feel the difference with Our Awesome Packages'} />
                     </div>
                 </div>
                 <div className="wpo-pricing-wrap">
