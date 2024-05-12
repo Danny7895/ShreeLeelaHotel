@@ -27,6 +27,8 @@ import ForgotPassword from '../ForgotPassword'
 import PricingPage from '../PricingPage/PricingPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import ContactPage from '../ContactPage/ContactPage';
+import TermCondition from '../TermCondition/index'
+import RefundReturnPolicy from '../RefundReturnPolicy/index';
 
 const AllRoute = () => {
 
@@ -62,6 +64,9 @@ const AllRoute = () => {
           <Route path='login' element={<LoginPage />} />
           <Route path='register' element={<SignUpPage />} />
           <Route path='forgot-password' element={<ForgotPassword />} />
+          <Route path='term-and-condition' element={<TermCondition/>} />
+          <Route path='Refund-Return-Policy' element={<RefundReturnPolicy/>} />
+
         </Routes>
       </BrowserRouter>
 
