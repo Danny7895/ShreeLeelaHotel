@@ -25,7 +25,7 @@ const About2 = (props) => {
                                     <h2>Enjoy Your Luxurious Vacation In ShreeLeela Hotel</h2>
                                 </div>
                                 <div className="wpo-about-content-inner">
-                                    <h3>FIND your place AT SHRI LEELA</h3>
+                                    <h3>FIND your place AT SHRI LEELA</h3>
 <p>Be a part of something bigger. Enjoy life every day. Make a difference in the lives of those around you. Love where you work. Join a company that values respect, integrity, humility, empathy, creativity, and fun. your perfect opportunity awaits.
 </p>
                                     <div className="about-info-wrap">
