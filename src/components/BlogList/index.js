@@ -34,7 +34,7 @@ const BlogList = (props) => {
                                     </div>
                                     <div className="entry-details">
                                         <h3><Link onClick={ClickHandler} to={`/blog-single/${blog.id}`}>{blog.title}</Link></h3>
-                                        <p>Law is a great career path if you want to build a broad skill set that includes everything from critical thinking and strategic planning to communications. If you love rising to a challenge.</p>
+                                        <p>Dubai is a city of superlatives, known for its ultra-modern architecture, luxurious shopping, vibrant nightlife, and cultural diversity.</p>
                                         <Link onClick={ClickHandler} to={`/blog-single/${blog.id}`} className="read-more">READ MORE...</Link>
                                     </div>
                                 </div>
