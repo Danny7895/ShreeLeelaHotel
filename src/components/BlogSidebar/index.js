@@ -20,9 +20,9 @@ const BlogSidebar = (props) => {
             <div className="blog-sidebar">
                 <div className="widget about-widget">
                     <div className="img-holder">
-                        <img src={about} alt="" />
+                        {/* <img src={about} alt="" /> */}
                     </div>
-                    <h4>Jenny Watson</h4>
+                    <h4>NISHA VERMA</h4>
                     <p>Hi! beautiful people. I`m an authtor of this blog. Read our post - stay with us</p>
                     <div className="social">
                         <ul className="clearfix">
@@ -92,7 +92,7 @@ const BlogSidebar = (props) => {
                 </div>
                 <div className="wpo-contact-widget widget">
                     <h2>How We Can <br /> Help You!</h2>
-                    <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                    {/* <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p> */}
                     <Link onClick={ClickHandler} to="/contact">Contact Us</Link>
                 </div>
             </div>

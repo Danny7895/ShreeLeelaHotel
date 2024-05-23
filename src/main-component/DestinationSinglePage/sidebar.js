@@ -38,7 +38,7 @@ const DestinationSidebar = (props) => {
                     </form>
                     <span>By signing up you agree to our <Link onClick={ClickHandler} to="/destination-single/1">Privecy Policy</Link></span>
                 </div>
-                <div className="wpo-instagram-widget widget">
+                {/* <div className="wpo-instagram-widget widget">
                     <h2>Instagram Shot</h2>
 
                     <ul>
@@ -49,12 +49,12 @@ const DestinationSidebar = (props) => {
                         <li><img src={ins5} alt="" /></li>
                         <li><img src={ins6} alt="" /></li>
                     </ul>
-                </div>
+                </div> */}
 
                 <div className="wpo-contact-widget widget">
                     <h2>How We Can <br /> Help You!</h2>
-                    <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis. </p>
+                    {/* <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                        viverra maecenas accumsan lacus vel facilisis. </p> */}
                     <Link onClick={ClickHandler} to="/contact">Contact Us</Link>
                 </div>
             </div>

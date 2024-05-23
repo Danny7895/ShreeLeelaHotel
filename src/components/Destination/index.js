@@ -17,7 +17,7 @@ const Destination = (props) => {
                 <SectionTitle MainTitle={'Our Most Populer Destination'} link={'/destination'}/>
                 <div className="destination-wrap">
                     <div className="row">
-                        {Destinations.slice(0, 3).map((destination, ditem) => (
+                        {Destinations.slice(0, 1).map((destination, ditem) => (
                             <div className="col-lg-4 col-md-6 col-12" key={ditem}>
                                 <div className="destination-item">
                                     <div className="destination-img">
@@ -25,9 +25,9 @@ const Destination = (props) => {
                                     </div>
                                     <div className="destination-content">
                                         <span className="sub">{destination.subTitle}</span>
-                                        <h2><Link onClick={ClickHandler} to={`/destination-single/${destination.id}`}>{destination.title}</Link></h2>
+                                        <h2><Link onClick={ClickHandler} to={`/destination-single/1`}>{destination.title}</Link></h2>
                                         <div className="destination-bottom">
-                                            <p>${destination.price} Per Night</p>
+                                            <p>Rs {destination.price} Per Night</p>
                                             <div className="destination-bottom-right">
                                                 <ul>
                                                     <li><i className="fa fa-star" aria-hidden="true"></i></li>

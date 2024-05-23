@@ -38,7 +38,7 @@ const Benefits = (props) => {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
+                                  Enjoy your day here with us in luxury hotel.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -52,11 +52,11 @@ const Benefits = (props) => {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
-                                </Typography>
+                                Plan as you Like and hurry up come to us for marvelous expreience.   
+                                   </Typography>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                        {/* <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel3bh-content"
@@ -70,8 +70,8 @@ const Benefits = (props) => {
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
                                 </Typography>
                             </AccordionDetails>
-                        </Accordion>
-                        <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+                        </Accordion> */}
+                        {/* <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel4bh-content"
@@ -84,7 +84,7 @@ const Benefits = (props) => {
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
                                 </Typography>
                             </AccordionDetails>
-                        </Accordion>
+                        </Accordion> */}
                     </div>
                 </div>
             </div>
