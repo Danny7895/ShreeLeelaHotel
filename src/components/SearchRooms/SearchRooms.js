@@ -31,7 +31,7 @@ const SearchRooms = ({ products, addToCartProduct }) => {
                           <li><strong>Capacity:</strong> {product.capacity}</li>
                           <li><strong>Max Children:</strong> {product.Children}</li>
                       </ul>
-                      <h3>${product.price} <span>/ Night</span></h3>
+                      <h3>Rs {product.price} <span>/ Night</span></h3>
                       <div className="add-to-cart">
                             <button
                             className="theme-btn mt-3"

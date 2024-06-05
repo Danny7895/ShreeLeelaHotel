@@ -122,19 +122,19 @@ const CartPage = (props) => {
                         Total Room<span>( {carts.length} )</span>
                       </li>
                       <li>
-                        Sub Price<span>${totalPrice(carts)}</span>
+                        Sub Price<span>Rs {totalPrice(carts)}</span>
                       </li>
                       <li>
-                        Vat<span>$0</span>
+                        Vat<span>Rs 0</span>
                       </li>
                       <li>
-                        Eco Tax<span>$0</span>
+                        Eco Tax<span>Rs 0</span>
                       </li>
                       <li>
-                        Delivery Charge<span>$0</span>
+                        Delivery Charge<span>Rs 0</span>
                       </li>
                       <li className="cart-b">
-                        Total Price<span>${totalPrice(carts)}</span>
+                        Total Price<span>Rs {totalPrice(carts)}</span>
                       </li>
                     </ul>
                   </div>
