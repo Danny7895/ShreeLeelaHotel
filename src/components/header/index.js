@@ -12,7 +12,7 @@ const Header = (props) => {
   const [menuActive, setMenuState] = useState(false);
   const [cartActive, setcartState] = useState(false);
   const SubmitHandler = (e) => {
-      e.preventDefault()
+      e.preventDefault()    
   }
 
   const ClickHandler = () => {
@@ -139,13 +139,13 @@ const Header = (props) => {
                               <div className="mini-cart-item clearfix" key={crt}>
                                 <div className="mini-cart-item-image">
                                   <span>
-                                    <img src={catItem.proImg} alt="icon" />
+                                    <img src={require(`../../images/room/${catItem.proImg}`)} alt="icon" />
                                   </span>
                                 </div>
                                 <div className="mini-cart-item-des">
                                   <p>{catItem.title} </p>
                                   <span className="mini-cart-item-price">
-                                    ${catItem.price} x {" "} {catItem.qty}
+                                    Rs {catItem.price} x {" "} {catItem.qty}
                                   </span>
                                   <span className="mini-cart-item-quantity">
                                     <button
@@ -162,7 +162,7 @@ const Header = (props) => {
                             ))}
                         </div>
                         <div className="mini-cart-action clearfix">
-                          <span className="mini-checkout-price">Subtotal: <span> ${totalPrice(carts)}</span></span>
+                          <span className="mini-checkout-price">Subtotal: <span> Rs {totalPrice(carts)}</span></span>
                           <div className="mini-btn">
                             <Link onClick={ClickHandler} to="/checkout" className="view-cart-btn s1">Checkout</Link>
                             <Link onClick={ClickHandler} to="/cart" className="view-cart-btn">View Cart</Link>

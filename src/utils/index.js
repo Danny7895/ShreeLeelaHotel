@@ -8,7 +8,27 @@ function getFeaturedProducts(products) {
 
 function totalPrice(items) {
     return items.reduce((itemAcc, item) => {
-        return itemAcc += (item.price * item.qty);
+        // console.log(item.price);
+    // const numericPart = priceString.split('+')[0];
+        return itemAcc += (item.price.split('+')[0] * item.qty);
+    }, 0);
+}
+
+function cgstPrice(items) {
+    const totalBasePrice= items.reduce((itemAcc, item) => {
+       
+         itemAcc += (item.price.split('+')[0] * item.qty);
+    }, 0);
+    return totalBasePrice * 6 / 100;
+}
+   
+
+function sgstPrice(items) {
+    return items.reduce((itemAcc, item) => {
+        // console.log(item.price);
+    // const numericPart = priceString.split('+')[0];
+         
+         return  itemAcc*6/100;
     }, 0);
 }
 
@@ -97,5 +117,7 @@ export {
     isEquals,
     minValueOne,
     getCompareList,
-    searchFilter
+    searchFilter,
+    cgstPrice,
+    sgstPrice
 };

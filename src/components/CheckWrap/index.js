@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Grid from "@material-ui/core/Grid";
 import SimpleReactValidator from "simple-react-validator";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { totalPrice } from '../../utils';
 import './style.scss';
 
-const CheckWrap = (props) => {
-
-    const push = useNavigate()
+const CheckWrap = ({ cartList, nights }) => {
+    const navigate = useNavigate();
 
     const [value, setValue] = useState({
         email: 'user@gmail.com',
@@ -22,48 +22,88 @@ const CheckWrap = (props) => {
         remember: false,
     });
 
-    const changeHandler = (e) => {
-        setValue({...value, [e.target.name]: e.target.value});
-        validator.showMessages();
-    };
-
-    const rememberHandler = () => {
-        setValue({...value, remember: !value.remember});
-    };
-
-    const [validator] = React.useState(new SimpleReactValidator({
+    const [validator] = useState(new SimpleReactValidator({
         className: 'errorMessage'
     }));
 
-    const submitForm = (e) => {
+    const changeHandler = (e) => {
+        setValue({ ...value, [e.target.name]: e.target.value });
+        validator.showMessages();
+    };
+
+    const submitForm = async (e) => {
         e.preventDefault();
+
+        if (cartList.length === 0) {
+            toast.error('Cart is empty.');
+            return;
+        }
+
+        const total_price =(0.12*nights*totalPrice(cartList)  +nights * totalPrice(cartList) )* 100;
+
+        console.log('Calculated total_price:', total_price); // Add log
+
+        const payload = {
+            amount: total_price, // Amount in paise
+            currency: 'INR',
+            receipt: 'order_rcptid_11',
+            notes: {
+                address: '123, example street',
+                country: 'India',
+            },
+        };
+
+        console.log('Payload:', payload); // Add log
+
         if (validator.allValid()) {
-            setValue({
-                email: '',
-                password: '',
-                card_holder: '',
-                card_number: '',
-                cvv: '',
-                expire_date: '',
-                remember: false
-            });
-            validator.hideMessages();
+            try {
+                const response = await axios.post('http://localhost:8080/api/checkout', payload, { withCredentials: true });
 
-            const userRegex = /^user+.*/gm;
-            const email = value.email;
+                console.log('Server response:', response.data); // Add log
 
-            if (email.match(userRegex)) {
-                toast.success('Your Hotel Room is Booked!');
-                push('/order_received');
-            }  else {
-                toast.info('user not existed!');
-                alert('user not existed! credential is : user@*****.com | vendor@*****.com | admin@*****.com');
+                if (response.data.success) {
+                    const options = {
+                        key: 'rzp_test_psYceEdF2V0TcX', // Replace with your Razorpay API Key
+                        amount: response.data.order.amount,
+                        currency: response.data.order.currency,
+                        name: 'Shree Leela Hotel',
+                        description: 'Payment for booking',
+                        order_id: response.data.order.id,
+                        handler: function (response) {
+                            toast.success('Payment successful');
+                            navigate('/order_received', {
+                                state: {
+                                    razorpayPaymentId: response.razorpay_payment_id,
+                                    razorpayOrderId: response.razorpay_order_id,
+                                    razorpaySignature: response.razorpay_signature,
+                                },
+                            });
+                        },
+                        prefill: {
+                            name: 'John Doe',
+                            email: 'john.doe@example.com',
+                            contact: '+919876543210',
+                        },
+                        theme: {
+                            color: '#F37254',
+                        },
+                    };
+
+                    const rzp = new window.Razorpay(options);
+                    rzp.open();
+                } else {
+                    toast.error('Error creating order');
+                }
+            } catch (error) {
+                console.error('Payment error:', error);
+                toast.error('Failed to process payment');
             }
         } else {
             validator.showMessages();
             toast.error('Empty field is not allowed!');
         }
     };
+
     return (
         <Grid className="cardbp mt-20">
             <Grid>
@@ -75,7 +115,7 @@ const CheckWrap = (props) => {
                                 label="Card holder Name"
                                 name="card_holder"
                                 value={value.card_holder}
-                                onChange={(e) => changeHandler(e)}
+                                onChange={changeHandler}
                                 type="text"
                                 InputLabelProps={{
                                     shrink: true,
@@ -89,7 +129,7 @@ const CheckWrap = (props) => {
                                 label="Card Number"
                                 name="card_number"
                                 value={value.card_number}
-                                onChange={(e) => changeHandler(e)}
+                                onChange={changeHandler}
                                 type="number"
                                 InputLabelProps={{
                                     shrink: true,
@@ -103,7 +143,7 @@ const CheckWrap = (props) => {
                                 label="CVV"
                                 name="cvv"
                                 value={value.cvv}
-                                onChange={(e) => changeHandler(e)}
+                                onChange={changeHandler}
                                 type="text"
                                 InputLabelProps={{
                                     shrink: true,
@@ -117,7 +157,7 @@ const CheckWrap = (props) => {
                                 label="Expire Date"
                                 name="expire_date"
                                 value={value.expire_date}
-                                onChange={(e) => changeHandler(e)}
+                                onChange={changeHandler}
                                 type="date"
                                 InputLabelProps={{
                                     shrink: true,
@@ -134,7 +174,7 @@ const CheckWrap = (props) => {
                 </form>
             </Grid>
         </Grid>
-    )
+    );
 };
 
 export default CheckWrap;

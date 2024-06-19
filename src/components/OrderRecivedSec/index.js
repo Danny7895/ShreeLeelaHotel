@@ -26,9 +26,10 @@ const OrderRecivedSec = ({cartList}) => {
                                             <TableBody>
                                                 {cartList.map(item => (
                                                     <TableRow key={item.id}>
-                                                        <TableCell><img src={item.proImg} alt="" /> {item.title} ${item.price} x {item.qty}</TableCell>
+                                                        <TableCell><img src={require(`../../images/room/${item.proImg}`)} alt="" /> {item.title} Rs {item.price} x {item.qty}</TableCell>
                                                         <TableCell
-                                                            align="right">${item.qty * item.price}</TableCell>
+                                                            align="right">
+                                                                Rs {cartList.length * totalPrice(cartList)}</TableCell>
                                                     </TableRow>
                                                 ))}
                                                 <TableRow className="totalProduct">
@@ -37,12 +38,20 @@ const OrderRecivedSec = ({cartList}) => {
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Sub Price</TableCell>
-                                                    <TableCell align="right">${totalPrice(cartList)}</TableCell>
+                                                    <TableCell align="right">Rs {totalPrice(cartList)}</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>SGST</TableCell>
+                                                    <TableCell align="right">Rs {0.06*totalPrice(cartList)}</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>CGST</TableCell>
+                                                    <TableCell align="right">Rs {0.06*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell><b>Total Price</b></TableCell>
                                                     <TableCell
-                                                        align="right"><b>${totalPrice(cartList)}</b></TableCell>
+                                                        align="right"><b>Rs {totalPrice(cartList)+0.12*totalPrice(cartList)}</b></TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>

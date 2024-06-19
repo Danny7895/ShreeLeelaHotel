@@ -8,13 +8,31 @@ import api from "../../api";
 import Scrollbar from '../../components/scrollbar';
 import Logo from '../../images/logo2.png'
 import Footer from '../../components/footer';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const SearchResults =({ addToCart }) => {
+const SearchResults =({ addToCart,searchData }) => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { startDate, endDate, adult, child, room } = location.state || {};
+
+    // console.log(startDate,endDate,adult,child,room);
 
     const productsArray = api();
     
     const addToCartProduct = (product, qty = 1) => {
         addToCart(product, qty);
+          // Redirect to cart with state
+      navigate("/cart", {
+        state: {
+            startDate,
+            endDate,
+            adult,
+            child,
+            room,
+        }
+    });
+
       };
 
     const products = productsArray

@@ -16,8 +16,10 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate,useLocation} from 'react-router-dom'
 import {totalPrice} from "../../utils";
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 // images
 import visa from '../../images/icon/visa.png';
@@ -26,6 +28,7 @@ import skrill from '../../images/icon/skrill.png';
 import paypal from '../../images/icon/paypal.png';
 
 import CheckWrap from '../CheckWrap'
+
 
 import './style.scss';
 
@@ -48,9 +51,12 @@ const cardType = [
     },
 ];
 
+const CheckoutSection = ({ cartList }) => {
 
-const CheckoutSection = ({cartList}) => {
-    // states
+    const location = useLocation();
+    const { startDate, endDate, adult, child, room ,nights} = location.state || {};
+
+    const navigate = useNavigate();
     const [tabs, setExpanded] = React.useState({
         cupon: false,
         billing_adress: false,
@@ -96,10 +102,70 @@ const CheckoutSection = ({cartList}) => {
             payment: true, [name]: !tabs[name]
         });
     }
-
+    const total_price= nights*totalPrice(cartList)*100;
+    
     // forms handler
     const changeHandler = e => {
-        setForms({...forms, [e.target.name]: e.target.value})
+        setForms({ ...forms, [e.target.name]: e.target.value });
+    };
+
+    // Payment handler
+    const handlePayment = async (event) => {
+        event.preventDefault();
+        console.log(";handle payment invoke")
+        if (cartList.length === 0) {
+            toast.error('Cart is empty.');
+            return;
+        }
+
+        try {
+            const response = await axios.post('http://localhost:8080/api/checkout', {
+                amount: total_price, // Amount in paise (e.g., 50000 paise = 500 INR)
+                currency: 'INR', // Preferred currency
+                receipt: 'order_rcptid_11', // Generate a unique receipt ID for each transaction
+                notes: {
+                    address: '123, example street',
+                    country: 'India',
+                },
+            }, { withCredentials: true });
+
+            if (response.data.success) {
+                const options = {
+                    key: 'rzp_test_psYceEdF2V0TcX', // Replace with your Razorpay API Key
+                    amount: response.data.order.amount,
+                    currency: response.data.order.currency,
+                    name: 'Shree Leela Hotel',
+                    description: 'Payment for booking',
+                    order_id: response.data.order.id,
+                    handler: function (response) {
+                        toast.success('Payment successful');
+                        navigate('/order_received', {
+                            state: {
+                                razorpayPaymentId: response.razorpay_payment_id,
+                                razorpayOrderId: response.razorpay_order_id,
+                                razorpaySignature: response.razorpay_signature,
+                            },
+                        });
+                    },
+                    prefill: {
+                        name: 'John Doe',
+                        email: 'john.doe@example.com',
+                        contact: '+919876543210',
+                    },
+                    theme: {
+                        color: '#F37254',
+                    },
+                };
+
+                const rzp = new window.Razorpay(options);
+                rzp.open();
+            } else {
+                toast.error('Error creating order');
+            }
+        } catch (error) {
+            console.error('Payment error:', error);
+            toast.error('Failed to process payment');
+        }
     };
 
 
@@ -109,7 +175,7 @@ const CheckoutSection = ({cartList}) => {
                 <Grid className="container" container spacing={3}>
                     <Grid item md={6} xs={12}>
                         <div className="check-form-area">
-                            <Grid className="cuponWrap checkoutCard">
+                            {/* <Grid className="cuponWrap checkoutCard">
                                 <Button className="collapseBtn" fullWidth onClick={() => faqHandler('cupon')}>
                                     Have a coupon ? Click here to enter your code.
                                     <FontAwesome name={tabs.cupon ? 'minus' : 'plus'}/>
@@ -131,7 +197,7 @@ const CheckoutSection = ({cartList}) => {
                                         </form>
                                     </Grid>
                                 </Collapse>
-                            </Grid>
+                            </Grid> */}
                             <Grid className="cuponWrap checkoutCard">
                                 <Button className="collapseBtn" fullWidth onClick={() => faqHandler('billing_adress')}>
                                     Billing Address
@@ -435,9 +501,9 @@ const CheckoutSection = ({cartList}) => {
                                                     onChange={(e) => changeHandler(e)}>
                                             <FormControlLabel value="cash" control={<Radio color="primary"/>}
                                                     label="Payment By Card "/>
-                                            <FormControlLabel value="card" control={<Radio color="primary"/>}
-                                                            label="Cash On delivery"/>
-                                            
+                                            {/* <FormControlLabel value="card" control={<Radio color="primary"/>}
+                                                            label="Cash On Hotel Visit"/>
+                                             */}
                                         </RadioGroup>
                                         <Collapse in={forms.payment_method === 'cash'} timeout="auto">
                                             <Grid className="cardType">
@@ -451,12 +517,13 @@ const CheckoutSection = ({cartList}) => {
                                                 ))}
                                             </Grid>
                                             <Grid>
-                                                <CheckWrap/>
+                                                <CheckWrap cartList={cartList} nights={nights}/>
                                             </Grid>
                                         </Collapse>
                                         <Collapse in={forms.payment_method === 'card'} timeout="auto">
                                             <Grid className="cardType">
-                                                <Link to='/order_received' className="cBtn cBtnLarge cBtnTheme mt-20 ml-15" type="submit">Proceed to Checkout</Link>
+                                                <Link onClick={handlePayment} className="cBtn cBtnLarge cBtnTheme mt-20 ml-15" >Proceed to Checkout</Link>
+                                                {/* <p>procedd to checkout</p> */}
                                             </Grid>
                                         </Collapse>
                                     </Collapse>
@@ -474,9 +541,9 @@ const CheckoutSection = ({cartList}) => {
                                             <TableBody>
                                                 {cartList.map(item => (
                                                     <TableRow key={item.id}>
-                                                        <TableCell>{item.title} ${item.price} x {item.qty}</TableCell>
+                                                        <TableCell>{item.title} Rs {item.price} x {item.qty}</TableCell>
                                                         <TableCell
-                                                            align="right">${item.qty * item.price}</TableCell>
+                                                            align="right">Rs {nights * item.price.split('+')[0]}</TableCell>
                                                     </TableRow>
                                                 ))}
                                                 <TableRow className="totalProduct">
@@ -485,12 +552,20 @@ const CheckoutSection = ({cartList}) => {
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Sub Price</TableCell>
-                                                    <TableCell align="right">${totalPrice(cartList)}</TableCell>
+                                                    <TableCell align="right">Rs {nights*totalPrice(cartList)}</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>SGST</TableCell>
+                                                    <TableCell align="right">Rs {0.06*nights*totalPrice(cartList)}</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>CGST</TableCell>
+                                                    <TableCell align="right">Rs {0.06*nights*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Total Price</TableCell>
                                                     <TableCell
-                                                        align="right">${totalPrice(cartList)}</TableCell>
+                                                        align="right">Rs {nights*totalPrice(cartList)+nights*0.12*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>
