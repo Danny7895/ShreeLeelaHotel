@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "react-datepicker/dist/react-datepicker.css";
+import "./custom_datapicker.css"
 
-const SearchSection = (props,state) => {
+
+
+const SearchSection = (props, state) => {
     const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date(new Date().getTime() + 86400000)); // Initialize end date to next day
 
     const [adult, setAdult] = useState(0);
     const [child, setChild] = useState(0);
@@ -18,24 +21,30 @@ const SearchSection = (props,state) => {
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+        // Set end date to be the next day if the start date changes
+        if (startDate >= endDate) {
+            setEndDate(new Date(startDate.getTime() + 86400000));
+        }
+    }, [startDate]);
+
     const SubmitHandler = (e) => {
         e.preventDefault();
         if (!startDate || !endDate || adult <= 0 || child < 0 || room <= 0) {
-            toast.error("Please fill neccessary details")
-            return ;
+            toast.error("Please fill necessary details");
+            return;
         }
-       
-        // Redirect to search results
-      // Redirect to search results with state
-      navigate("/search-result", {
-        state: {
-            startDate,
-            endDate,
-            adult,
-            child,
-            room
-        }
-    });
+
+        // Redirect to search results with state
+        navigate("/search-result", {
+            state: {
+                startDate,
+                endDate,
+                adult,
+                child,
+                room
+            }
+        });
     }
 
     const ClickHandler = () => {
@@ -77,6 +86,7 @@ const SearchSection = (props,state) => {
                                                 selected={startDate}
                                                 onChange={(date) => setStartDate(date)}
                                                 minDate={new Date()} // Set minimum date to current date
+                                                dateFormat="dd/MM/yyyy"
                                             />
                                             <i className="fi flaticon-calendar"></i>
                                         </div>
@@ -86,8 +96,9 @@ const SearchSection = (props,state) => {
                                             <DatePicker
                                                 selected={endDate}
                                                 onChange={(date) => setEndDate(date)}
-                                                minDate={startDate} // Ensure end date is after start date
-                                            />
+                                                minDate={new Date(startDate.getTime() + 86400000)} // Ensure end date is after start date
+                                                dateFormat="dd/MM/yyyy"
+                                           />
                                             <i className="fi flaticon-calendar"></i>
                                         </div>
                                     </div>
@@ -144,7 +155,7 @@ const SearchSection = (props,state) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default SearchSection;

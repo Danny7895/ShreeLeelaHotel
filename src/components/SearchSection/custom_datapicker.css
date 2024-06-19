@@ -1,0 +1,52 @@
+/* custom-datepicker.css */
+
+/* Customize calendar background */
+.custom-calendar {
+    background-color: #f0f0f0; /* Change this to your desired background color */
+}
+
+/* Customize selected day */
+.react-datepicker__day--selected, 
+.react-datepicker__day--selected:hover, 
+.react-datepicker__day--keyboard-selected {
+    background-color: #ff6f61 !important; /* Change this to your desired selected date color */
+    color: white !important; /* Ensure the text color is readable */
+}
+
+/* Customize day on hover */
+.react-datepicker__day--hover {
+    background-color: #d4d4d4 !important; /* Change this to your desired hover color */
+}
+
+/* Customize header background and text */
+.react-datepicker__header {
+    background-color: #ff6f61; /* Change this to your desired header background color */
+    color: white; /* Change this to your desired header text color */
+}
+
+/* Customize month year container */
+.react-datepicker__current-month {
+    color: white; /* Change this to your desired month text color */
+}
+
+.react-datepicker__day-names {
+    color: white; /* Change this to your desired day names text color */
+}
+
+/* Customize navigation buttons */
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+    border-color: #fff; /* Change this to your desired navigation buttons color */
+}
+
+.react-datepicker__navigation--previous:hover,
+.react-datepicker__navigation--next:hover {
+    border-color: #d4d4d4; /* Change this to your desired hover color for navigation buttons */
+}
+
+
+.fi.flaticon-calendar,
+.fi.flaticon-user {
+    color: #ff6f61; /* Change this to your desired icon color */
+}
+
