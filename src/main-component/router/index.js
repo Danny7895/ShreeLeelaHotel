@@ -34,7 +34,7 @@ const AllRoute = () => {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/home">
+      <BrowserRouter basename="/">
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='home' element={<Homepage />} />
