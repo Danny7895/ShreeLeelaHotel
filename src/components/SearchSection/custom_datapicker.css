@@ -36,7 +36,7 @@
 /* Customize navigation buttons */
 .react-datepicker__navigation--previous,
 .react-datepicker__navigation--next {
-    border-color: #fff; /* Change this to your desired navigation buttons color */
+    border-color: white; /* Change this to your desired navigation buttons color */
 }
 
 .react-datepicker__navigation--previous:hover,
@@ -44,9 +44,8 @@
     border-color: #d4d4d4; /* Change this to your desired hover color for navigation buttons */
 }
 
-
+/* Change color of fi flaticon icons */
 .fi.flaticon-calendar,
 .fi.flaticon-user {
-    color: #ff6f61; /* Change this to your desired icon color */
+    color: #ff6f61 !important; /* Change this to your desired icon color */
 }
-
