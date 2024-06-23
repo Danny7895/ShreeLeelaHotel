@@ -6,7 +6,7 @@ import Scrollbar from "../../components/scrollbar";
 // import { Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {  totalPrice } from "../../utils";
+import {  totalPrice,totalRooms } from "../../utils";
 import {
   removeFromCart,
   incrementQuantity,
@@ -163,7 +163,7 @@ const ClickHandler = () => {
                   <div className="cart-product-list">
                     <ul>
                       <li>
-                        Total Room<span>( {carts.length} )</span>
+                        Total Room<span>( {totalRooms(carts)} )</span>
                       </li>
                       <li>
                         Sub Price<span>Rs {(totalPrice(carts)) }</span>
