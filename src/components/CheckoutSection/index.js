@@ -16,8 +16,8 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
-import {Link, useNavigate,useLocation} from 'react-router-dom'
-import {totalPrice} from "../../utils";
+import {Link, useNavigate} from 'react-router-dom'
+import {totalPrice,totalRooms} from "../../utils";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -52,10 +52,7 @@ const cardType = [
 ];
 
 const CheckoutSection = ({ cartList }) => {
-
-    const location = useLocation();
-    const { startDate, endDate, adult, child, room ,nights} = location.state || {};
-
+// console.log(cartList)
     const navigate = useNavigate();
     const [tabs, setExpanded] = React.useState({
         cupon: false,
@@ -102,7 +99,7 @@ const CheckoutSection = ({ cartList }) => {
             payment: true, [name]: !tabs[name]
         });
     }
-    const total_price= nights*totalPrice(cartList)*100;
+    const total_price= 0.12*totalPrice(cartList)+totalPrice(cartList)*100;
     
     // forms handler
     const changeHandler = e => {
@@ -148,9 +145,10 @@ const CheckoutSection = ({ cartList }) => {
                         });
                     },
                     prefill: {
-                        name: 'John Doe',
-                        email: 'john.doe@example.com',
-                        contact: '+919876543210',
+                        name: 'Shree Leela',
+                        email: 'info@shreeleelahotel.com',
+                        contact: '+91 9999111111',
+
                     },
                     theme: {
                         color: '#F37254',
@@ -326,7 +324,7 @@ const CheckoutSection = ({ cartList }) => {
                                                         className="formInput radiusNone"
                                                     />
                                                 </Grid>
-                                                <Grid item xs={12}>
+                                                {/* <Grid item xs={12}>
                                                     <FormControlLabel
                                                         className="checkBox"
                                                         control={
@@ -339,7 +337,7 @@ const CheckoutSection = ({ cartList }) => {
                                                         }
                                                         label="Ship to a different address?"
                                                     />
-                                                </Grid>
+                                                </Grid> */}
                                                 <Grid item xs={12}>
                                                     <Collapse in={dif_ship} timeout="auto" unmountOnExit>
                                                         <Grid container spacing={3}>
@@ -500,7 +498,7 @@ const CheckoutSection = ({ cartList }) => {
                                                     value={forms.payment_method}
                                                     onChange={(e) => changeHandler(e)}>
                                             <FormControlLabel value="cash" control={<Radio color="primary"/>}
-                                                    label="Payment By Card "/>
+                                                    label="Pay Online (Proceed to checkout for UPI and other Option) "/>
                                             {/* <FormControlLabel value="card" control={<Radio color="primary"/>}
                                                             label="Cash On Hotel Visit"/>
                                              */}
@@ -517,7 +515,7 @@ const CheckoutSection = ({ cartList }) => {
                                                 ))}
                                             </Grid>
                                             <Grid>
-                                                <CheckWrap cartList={cartList} nights={nights}/>
+                                                <CheckWrap cartList={cartList}/>
                                             </Grid>
                                         </Collapse>
                                         <Collapse in={forms.payment_method === 'card'} timeout="auto">
@@ -541,31 +539,31 @@ const CheckoutSection = ({ cartList }) => {
                                             <TableBody>
                                                 {cartList.map(item => (
                                                     <TableRow key={item.id}>
-                                                        <TableCell>{item.title} Rs {item.price} x {item.qty}</TableCell>
+                                                        <TableCell>{item.title} Rs {item.basePrice} x Rooms {item.room} x Nights {item.nights}</TableCell>
                                                         <TableCell
-                                                            align="right">Rs {nights * item.price.split('+')[0]}</TableCell>
+                                                            align="right">Rs {item.sum}</TableCell>
                                                     </TableRow>
                                                 ))}
                                                 <TableRow className="totalProduct">
                                                     <TableCell>Total Room</TableCell>
-                                                    <TableCell align="right">{cartList.length}</TableCell>
+                                                    <TableCell align="right">{totalRooms(cartList)}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Sub Price</TableCell>
-                                                    <TableCell align="right">Rs {nights*totalPrice(cartList)}</TableCell>
+                                                    <TableCell align="right">Rs {totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>SGST</TableCell>
-                                                    <TableCell align="right">Rs {0.06*nights*totalPrice(cartList)}</TableCell>
+                                                    <TableCell>SGST 6%</TableCell>
+                                                    <TableCell align="right">Rs {0.06*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>CGST</TableCell>
-                                                    <TableCell align="right">Rs {0.06*nights*totalPrice(cartList)}</TableCell>
+                                                    <TableCell>CGST 6%</TableCell>
+                                                    <TableCell align="right">Rs {0.06*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Total Price</TableCell>
                                                     <TableCell
-                                                        align="right">Rs {nights*totalPrice(cartList)+nights*0.12*totalPrice(cartList)}</TableCell>
+                                                        align="right">Rs {totalPrice(cartList)+0.12*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>

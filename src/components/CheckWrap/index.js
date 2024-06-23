@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from "@material-ui/core/Grid";
 import SimpleReactValidator from "simple-react-validator";
 import { toast } from "react-toastify";
@@ -9,18 +9,29 @@ import axios from 'axios';
 import { totalPrice } from '../../utils';
 import './style.scss';
 
-const CheckWrap = ({ cartList, nights }) => {
+const CheckWrap = ({ cartList }) => {
     const navigate = useNavigate();
 
     const [value, setValue] = useState({
         email: 'user@gmail.com',
         password: '123456',
-        card_holder: 'Jhon Doe',
-        card_number: '589622144',
-        cvv: '856226',
+        card_holder: 'Shree Leela Card',
+        card_number: '589622144123',
+        cvv: '123',
         expire_date: '',
         remember: false,
     });
+
+    useEffect(() => {
+        // Set expire date to the next day
+        const nextDay = new Date();
+        nextDay.setDate(nextDay.getDate() + 1);
+        const formattedNextDay = nextDay.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+        setValue((prevData) => ({
+            ...prevData,
+            expire_date: formattedNextDay,
+        }));
+    }, []);
 
     const [validator] = useState(new SimpleReactValidator({
         className: 'errorMessage'
@@ -39,9 +50,7 @@ const CheckWrap = ({ cartList, nights }) => {
             return;
         }
 
-        const total_price =(0.12*nights*totalPrice(cartList)  +nights * totalPrice(cartList) )* 100;
-
-        console.log('Calculated total_price:', total_price); // Add log
+        const total_price = (0.12 * totalPrice(cartList) + totalPrice(cartList)) * 100;
 
         const payload = {
             amount: total_price, // Amount in paise
@@ -53,13 +62,9 @@ const CheckWrap = ({ cartList, nights }) => {
             },
         };
 
-        console.log('Payload:', payload); // Add log
-
         if (validator.allValid()) {
             try {
                 const response = await axios.post('http://localhost:8080/api/checkout', payload, { withCredentials: true });
-
-                console.log('Server response:', response.data); // Add log
 
                 if (response.data.success) {
                     const options = {

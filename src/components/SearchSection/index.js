@@ -12,9 +12,9 @@ const SearchSection = (props, state) => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date(new Date().getTime() + 86400000)); // Initialize end date to next day
 
-    const [adult, setAdult] = useState(0);
+    const [adult, setAdult] = useState(1);
     const [child, setChild] = useState(0);
-    const [room, setRoom] = useState(0);
+    const [room, setRoom] = useState(1);
 
     const [searchActive, setSearchState] = useState(false);
     const [error, setError] = useState("");
@@ -31,6 +31,7 @@ const SearchSection = (props, state) => {
     const SubmitHandler = (e) => {
         e.preventDefault();
         if (!startDate || !endDate || adult <= 0 || child < 0 || room <= 0) {
+            // setError("Please fill necessary details.")
             toast.error("Please fill necessary details");
             return;
         }
@@ -80,6 +81,7 @@ const SearchSection = (props, state) => {
                         <div className="wpo-select-wrap">
                             <div className="wpo-select-area" style={{ borderRadius: '1px' }}>
                                 <form className="clearfix" onSubmit={SubmitHandler}>
+                                    
                                     <div className="select-sub">
                                         <div className="input-group date">
                                             <DatePicker

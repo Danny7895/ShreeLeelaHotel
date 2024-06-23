@@ -1,12 +1,6 @@
 import * as types from "./type";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import {
-  ADD_TO_WISHLIST,
-  REMOVE_FROM_WISHLIST,
-  REMOVE_FROM_COMPARE_LIST,
-  ADD_TO_COMPARE,
-} from "./type";
 
 export const fetchProductsBegin = () => ({
   type: types.FETCH_PRODUCTS_BEGIN,
@@ -17,14 +11,19 @@ export const receiveProducts = (products) => ({
   products,
 });
 
-export const addToCart = (product, qty, color, size) => (dispatch) => {
-  toast.success("Room Added to Cart");
+export const addToCart = (product, qty, startDate, endDate, adult, child, room,nights) => (dispatch) => {
+  console.log("add to cart action",product,qty,startDate,endDate,adult,child,room,)
+  toast.success("Room Added to Your Cart");
   dispatch({
     type: types.ADD_TO_CART,
     product,
     qty,
-    color,
-    size,
+    startDate,
+    endDate,
+    adult,
+    child,
+    room,
+    nights,
   });
 };
 
@@ -52,7 +51,7 @@ export const decrementQuantity = (product_id) => (dispatch) => {
 
 export const addToWishList = (product) => (dispatch) => {
   dispatch({
-    type: ADD_TO_WISHLIST,
+    type: types.ADD_TO_WISHLIST,
     product,
   });
 };
@@ -60,20 +59,21 @@ export const addToWishList = (product) => (dispatch) => {
 export const removeFromWishList = (id) => (dispatch) => {
   toast.error("Item removed from WishList");
   dispatch({
-    type: REMOVE_FROM_WISHLIST,
+    type: types.REMOVE_FROM_WISHLIST,
     id,
   });
 };
 
 export const addToCompareList = (product) => (dispatch) => {
   dispatch({
-    type: ADD_TO_COMPARE,
+    type: types.ADD_TO_COMPARE,
     product,
   });
 };
+
 export const removeFromCompareList = (product) => (dispatch) => {
   dispatch({
-    type: REMOVE_FROM_COMPARE_LIST,
+    type: types.REMOVE_FROM_COMPARE_LIST,
     product,
   });
 };

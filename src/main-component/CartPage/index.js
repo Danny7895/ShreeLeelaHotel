@@ -3,10 +3,10 @@ import PageTitle from '../../components/pagetitle/PageTitle';
 import Navbar from '../../components/Navbar';
 import Footer from "../../components/footer";
 import Scrollbar from "../../components/scrollbar";
-import { Button, Grid } from "@material-ui/core";
+// import { Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { cgstPrice, sgstPrice, totalPrice } from "../../utils";
+import {  totalPrice } from "../../utils";
 import {
   removeFromCart,
   incrementQuantity,
@@ -25,9 +25,7 @@ const CartPage = (props,state) => {
   const location = useLocation();
     const { startDate, endDate, adult, child, room } = location.state || {};
 
-    console.log(startDate,endDate,adult,child,room);
-    const formattedStartDate = startDate ? new Date(startDate).toLocaleDateString() : '';
-    const formattedEndDate = endDate ? new Date(endDate).toLocaleDateString() : '';
+    // console.log(startDate,endDate,adult,child,room);
   
  // Calculate the number of nights
  const calculateNights = (start, end) => {
@@ -49,12 +47,7 @@ const ClickHandler = () => {
   else {
     navigate("/checkout", {
       state: {
-          startDate,
-          endDate,
-          adult,
-          child,
-          room,
-          nights
+          carts
       }
   });
   }
@@ -76,6 +69,7 @@ const ClickHandler = () => {
                       <thead>
                         <tr>
                           <th className="product-2">Room type</th>
+                          <th className="stock">Price</th>
                           <th className="pr">Guests</th>
                           <th className="ptice">Rooms</th>
                           <th className="stock">Check - in</th>
@@ -95,12 +89,21 @@ const ClickHandler = () => {
                                   <li className="first-cart">{catItem.title}</li>
                                 </ul>
                               </td>
-                              <td className="ptice">{adult} adult + {child} child</td>
+                              {/* <td className="ptice">{adult} adult + {child} child</td>
                               {/* <td className="ptice">{catItem.qty}</td> */}
-                              <td className="ptice">{room}</td>
+                              {/* <td className="ptice">{room}</td>
                               <td className="stock">{formattedStartDate} </td>
                               <td className="stock">{formattedEndDate} </td>
-                              <td className="stock">{nights}
+                              <td className="stock">{nights}</td>  */}
+                              <td className="ptice">Rs {catItem.basePrice}</td>
+                              <td className="ptice">adult {catItem.adult} + child {catItem.child}</td>
+                              <td className="ptice">{catItem.room}</td>
+                              
+                              <td className="stock">{new Date(catItem.startDate).toLocaleDateString()}</td> {/* Format start date */}
+                              <td className="stock">{new Date(catItem.endDate).toLocaleDateString()}</td> {/* Format end date */}
+                             
+                              <td className="stock">{catItem.nights}</td>
+                              <td className="stock">Rs {catItem.sum}</td>
                                 {/* <Grid className="quantity cart-plus-minus">
                                   <Button
                                     className="dec qtybutton"
@@ -121,8 +124,8 @@ const ClickHandler = () => {
                                     +
                                   </Button>
                                 </Grid> */}
-                              </td>
-                              <td className="stock">Rs {nights * room * catItem.price.split('+')[0]}</td>
+                              
+                              {/* <td className="stock">Rs {nights * room * catItem.price.split('+')[0]}</td> */}
                               <td className="action">
                                 <ul>
                                   <li
@@ -146,7 +149,8 @@ const ClickHandler = () => {
                         <Link
                           onClick={ClickHandler}
                           className="theme-btn"
-                          to="/search-result"
+                          to="/"
+                          // to="/search-result"
                         >
                           Add Another{" "}
                         </Link>
@@ -162,19 +166,19 @@ const ClickHandler = () => {
                         Total Room<span>( {carts.length} )</span>
                       </li>
                       <li>
-                        Sub Price<span>Rs {nights*totalPrice(carts)}</span>
+                        Sub Price<span>Rs {(totalPrice(carts)) }</span>
                       </li>
                       <li>
-                        CGST<span>Rs {0.06*nights*totalPrice(carts)} </span>
+                        CGST<span>Rs {0.06*totalPrice(carts)} </span>
                       </li>
                       <li>
-                        SGST<span>Rs {0.06*nights*totalPrice(carts)}</span>
+                        SGST<span>Rs {0.06*totalPrice(carts)}</span>
                       </li>
                       <li>
                         Other Charge<span>Rs 0</span>
                       </li>
                       <li className="cart-b">
-                        Total Price<span>Rs {nights*totalPrice(carts)+nights*0.12*totalPrice(carts)}</span>
+                        Total Price<span>Rs {totalPrice(carts)+0.12*totalPrice(carts)}</span>
                       </li>
                     </ul>
                   </div>

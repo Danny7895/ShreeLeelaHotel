@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState,useEffect} from 'react';
 import PageTitle from '../../components/pagetitle/PageTitle';
 import { connect } from "react-redux";
 import Navbar from '../../components/Navbar';
@@ -14,26 +14,33 @@ import { useNavigate } from 'react-router-dom';
 const SearchResults =({ addToCart,searchData }) => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [nights, setNights]= useState(1);
     const { startDate, endDate, adult, child, room } = location.state || {};
-
-    // console.log(startDate,endDate,adult,child,room);
-
+   
+ // Calculate the number of nights
+ const calculateNights = (start, end) => {
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const diffTime = Math.abs(endDate - startDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+  };
+  
+  useEffect(() => {
+    if (startDate && endDate) {
+        const nightsSpend = calculateNights(startDate, endDate);
+        setNights(nightsSpend);
+    }
+}, [startDate, endDate]);
     const productsArray = api();
     
     const addToCartProduct = (product, qty = 1) => {
-        addToCart(product, qty);
-          // Redirect to cart with state
-      navigate("/cart", {
-        state: {
-            startDate,
-            endDate,
-            adult,
-            child,
-            room,
-        }
-    });
-
+        addToCart(product, qty, startDate, endDate, adult, child, room, nights);
+        // Redirect to cart with state
+        navigate("/cart");
       };
+
+    
 
     const products = productsArray
 
