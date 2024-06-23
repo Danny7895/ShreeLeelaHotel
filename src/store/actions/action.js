@@ -12,8 +12,7 @@ export const receiveProducts = (products) => ({
 });
 
 export const addToCart = (product, qty, startDate, endDate, adult, child, room,nights) => (dispatch) => {
-  console.log("add to cart action",product,qty,startDate,endDate,adult,child,room,)
-  toast.success("Room Added to Your Cart");
+   toast.success("Room Added to Your Cart");
   dispatch({
     type: types.ADD_TO_CART,
     product,

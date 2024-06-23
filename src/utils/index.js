@@ -31,10 +31,7 @@ function cgstPrice(items) {
    
 
 function sgstPrice(items) {
-    return items.reduce((itemAcc, item) => {
-        // console.log(item.price);
-    // const numericPart = priceString.split('+')[0];
-         
+    return items.reduce((itemAcc, item) => { 
          return  itemAcc*6/100;
     }, 0);
 }

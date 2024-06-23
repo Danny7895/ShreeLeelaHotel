@@ -52,7 +52,6 @@ const cardType = [
 ];
 
 const CheckoutSection = ({ cartList }) => {
-// console.log(cartList)
     const navigate = useNavigate();
     const [tabs, setExpanded] = React.useState({
         cupon: false,
@@ -109,7 +108,6 @@ const CheckoutSection = ({ cartList }) => {
     // Payment handler
     const handlePayment = async (event) => {
         event.preventDefault();
-        console.log(";handle payment invoke")
         if (cartList.length === 0) {
             toast.error('Cart is empty.');
             return;
@@ -161,7 +159,7 @@ const CheckoutSection = ({ cartList }) => {
                 toast.error('Error creating order');
             }
         } catch (error) {
-            console.error('Payment error:', error);
+            // console.error('Payment error:', error);
             toast.error('Failed to process payment');
         }
     };

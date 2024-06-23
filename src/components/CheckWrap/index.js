@@ -100,7 +100,7 @@ const CheckWrap = ({ cartList }) => {
                     toast.error('Error creating order');
                 }
             } catch (error) {
-                console.error('Payment error:', error);
+               
                 toast.error('Failed to process payment');
             }
         } else {

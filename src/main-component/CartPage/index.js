@@ -24,8 +24,6 @@ const CartPage = (props,state) => {
 
   const location = useLocation();
     const { startDate, endDate, adult, child, room } = location.state || {};
-
-    // console.log(startDate,endDate,adult,child,room);
   
  // Calculate the number of nights
  const calculateNights = (start, end) => {
@@ -166,7 +164,7 @@ const ClickHandler = () => {
                         Total Room<span>{totalRooms(carts)} </span>
                       </li>
                       <li>
-                        Sub Price<span>Rs {(totalPrice(carts)) }</span>
+                        Sub Price<span>Rs {totalPrice(carts) }</span>
                       </li>
                       <li>
                         CGST<span>Rs {0.06*totalPrice(carts)} </span>
