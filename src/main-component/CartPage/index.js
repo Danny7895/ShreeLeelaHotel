@@ -163,7 +163,7 @@ const ClickHandler = () => {
                   <div className="cart-product-list">
                     <ul>
                       <li>
-                        Total Room<span>( {totalRooms(carts)} )</span>
+                        Total Room<span>{totalRooms(carts)} </span>
                       </li>
                       <li>
                         Sub Price<span>Rs {(totalPrice(carts)) }</span>
