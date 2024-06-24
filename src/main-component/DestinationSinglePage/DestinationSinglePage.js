@@ -9,8 +9,8 @@ import DestinationSidebar from './sidebar'
 import Footer from '../../components/footer';
 import Logo from '../../images/logo2.png'
 
-import dimg1 from '../../images/destination-single/2.jpg'
-import dimg2 from '../../images/destination-single/3.jpg'
+// import dimg1 from '../../images/destination-single/2.jpg'
+// import dimg2 from '../../images/destination-single/3.jpg'
 import Newslatter from '../../components/Newslatter/Newslatter';
 
 

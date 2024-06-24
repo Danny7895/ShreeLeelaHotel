@@ -23,7 +23,7 @@ const CartPage = (props,state) => {
   const { carts } = props;
 
   const location = useLocation();
-    const { startDate, endDate, adult, child, room } = location.state || {};
+    const { startDate, endDate } = location.state || {};
   
  // Calculate the number of nights
  const calculateNights = (start, end) => {

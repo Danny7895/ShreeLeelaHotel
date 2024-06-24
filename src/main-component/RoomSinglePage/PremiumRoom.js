@@ -6,7 +6,7 @@ import simg2 from '../../images/room/img-8.jpg'
 import rv1 from '../../images/room/r1.jpg'
 import rv2 from '../../images/room/r2.jpg'
 import RoomSidebar from './RoomSidebar'
-import Amenities from '../../api/amenities'
+// import Amenities from '../../api/amenities'
 
 const PremiumRooms = (props) => {
 
@@ -111,20 +111,20 @@ const PremiumRooms = (props) => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
+                                            <td>250</td>
+                                            <td>250</td>
+                                            <td>250</td>
+                                            <td>250</td>
+                                            <td>250</td>
+                                            <td>250</td>
+                                            <td>250</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
 
                             <div className="map-area">
-                           <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=SHREE+LEELA+HOTEL+%26+RESORT%2C+RAJMARGH%2C+BAS+STAND+CHOURAHA%2C+LOLARI%2C+RAJMARGH%2C+Lolri%2C+Madhya+Pradesh+487330&t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                           <iframe title=' ' id="gmap_canvas" src="https://maps.google.com/maps?q=SHREE+LEELA+HOTEL+%26+RESORT%2C+RAJMARGH%2C+BAS+STAND+CHOURAHA%2C+LOLARI%2C+RAJMARGH%2C+Lolri%2C+Madhya+Pradesh+487330&t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                            </div>
                         </div>
                         <div className="room-review">

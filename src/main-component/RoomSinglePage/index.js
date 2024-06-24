@@ -8,7 +8,7 @@ import api from "../../api";
 import Footer from '../../components/footer';
 import Logo from '../../images/logo2.png'
 import Rooms from './rooms';
-import RoomDetails from './RoomDetails';
+// import RoomDetails from './RoomDetails';
 import Newslatter from '../../components/Newslatter/Newslatter';
 import DeluxeRooms from './DeluxeRoom';
 import PremiumRooms from './PremiumRoom';
@@ -74,10 +74,10 @@ const RoomSinglePage = (props) => {
                        {/* <h6>{item.title}</h6> */}
                         <Rooms item={item}/>
                         
-                     {(item.title=='Deluxe Rooms')? <DeluxeRooms item={item} /> : null}
-                     {(item.title=='Premium Rooms')? <PremiumRooms item={item} /> : null}
-                     {(item.title=='Suite Rooms')? <SuiteRooms item={item} /> : null}
-                     {(item.title=='Boutique Twin Room')? <BoutiqueRooms item={item} /> : null}
+                     {(item.title==='Deluxe Rooms')? <DeluxeRooms item={item} /> : null}
+                     {(item.title==='Premium Rooms')? <PremiumRooms item={item} /> : null}
+                     {(item.title==='Suite Rooms')? <SuiteRooms item={item} /> : null}
+                     {(item.title==='Boutique Twin Room')? <BoutiqueRooms item={item} /> : null}
                     </div>
                 : null}
             </div>
