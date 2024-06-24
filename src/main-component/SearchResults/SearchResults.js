@@ -6,7 +6,7 @@ import { addToCart } from "../../store/actions/action";
 import SearchRooms from '../../components/SearchRooms/SearchRooms';
 import api from "../../api";
 import Scrollbar from '../../components/scrollbar';
-import Logo from '../../images/logo2.png'
+import Logo from '../../images/logo2.png';
 import Footer from '../../components/footer';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -42,7 +42,7 @@ const SearchResults =({ addToCart,searchData }) => {
 
     
 
-    const products = productsArray
+    const products = productsArray;
 
     return(
         <Fragment>

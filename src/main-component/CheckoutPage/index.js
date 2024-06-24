@@ -1,11 +1,11 @@
 import React, {Fragment} from 'react';
 import PageTitle from '../../components/pagetitle/PageTitle';
 import Navbar from '../../components/Navbar';
-import CheckoutSection from '../../components/CheckoutSection'
-import Footer from '../../components/footer'
-import Scrollbar from '../../components/scrollbar'
+import CheckoutSection from '../../components/CheckoutSection';
+import Footer from '../../components/footer';
+import Scrollbar from '../../components/scrollbar';
 import {connect} from "react-redux";
-import Logo from '../../images/logo2.png'
+import Logo from '../../images/logo2.png';
 
 const CheckoutPage =({cartList}) => {
     return(
@@ -21,7 +21,7 @@ const CheckoutPage =({cartList}) => {
 const mapStateToProps = state => {
     return {
         cartList: state.cartList.cart,
-        symbol: state.data.symbol
+        symbol: state.data.symbol,
     }
 };
 

@@ -14,7 +14,7 @@ import {
 } from "../../store/actions/action";
 import { useLocation ,useNavigate} from 'react-router-dom';
 
-import Logo from '../../images/logo2.png'
+import Logo from '../../images/logo2.png';
 import { toast } from "react-toastify";
 
 const CartPage = (props,state) => {

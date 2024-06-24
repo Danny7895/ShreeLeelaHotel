@@ -16,7 +16,7 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom';
 import {totalPrice,totalRooms} from "../../utils";
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -27,7 +27,7 @@ import mastercard from '../../images/icon/mastercard.png';
 import skrill from '../../images/icon/skrill.png';
 import paypal from '../../images/icon/paypal.png';
 
-import CheckWrap from '../CheckWrap'
+import CheckWrap from '../CheckWrap';
 
 
 import './style.scss';
@@ -97,7 +97,7 @@ const CheckoutSection = ({ cartList }) => {
             billing_adress: false,
             payment: true, [name]: !tabs[name]
         });
-    }
+    };
     const total_price= 0.12*totalPrice(cartList)+totalPrice(cartList)*100;
     
     // forms handler
@@ -519,7 +519,6 @@ const CheckoutSection = ({ cartList }) => {
                                         <Collapse in={forms.payment_method === 'card'} timeout="auto">
                                             <Grid className="cardType">
                                                 <Link onClick={handlePayment} className="cBtn cBtnLarge cBtnTheme mt-20 ml-15" >Proceed to Checkout</Link>
-                                                {/* <p>procedd to checkout</p> */}
                                             </Grid>
                                         </Collapse>
                                     </Collapse>
@@ -560,8 +559,7 @@ const CheckoutSection = ({ cartList }) => {
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Total Price</TableCell>
-                                                    <TableCell
-                                                        align="right">Rs {totalPrice(cartList)+0.12*totalPrice(cartList)}</TableCell>
+                                                    <TableCell align="right">Rs {totalPrice(cartList)+0.12*totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>
