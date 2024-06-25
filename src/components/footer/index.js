@@ -65,11 +65,12 @@ const Footer = (props) => {
                                 </div>
                                 <ul>
                                     <li><Link onClick={ClickHandler} to="/about">About Us</Link></li>
-                                    <li><Link onClick={ClickHandler} to="/term-and-condition">Term And Condition</Link></li>
-                                    <li><Link onClick={ClickHandler} to="/Refund-Return-Policy">Refund & Return Policy</Link></li>
                                     <li><Link onClick={ClickHandler} to="/room">Awesome Rooms</Link></li>
                                     <li><Link onClick={ClickHandler} to="/service">Our Services</Link></li>
                                     <li><Link onClick={ClickHandler} to="/pricing">Pricing Plan</Link></li>
+                                    <li><Link onClick={ClickHandler} to="/term-and-condition">Term And Condition</Link></li>
+                                    <li><Link onClick={ClickHandler} to="/Refund-Return-Policy">Refund & Return Policy</Link></li>
+                                    <li><Link onClick={ClickHandler} to="/Privacy-Policy">Privacy Policy</Link></li>
                                 </ul>
                             </div>
                         </div>
