@@ -84,7 +84,7 @@ const Footer = (props) => {
                                     <ul>
                                         <li><i className="fi flaticon-placeholder"></i>Madhya Pradesh</li>
                                         <li><i className="fi flaticon-phone-call"></i>+91 8001 234567</li>
-                                        <li><i className="fi flaticon-send"></i>ShreeLeela@gmail.com</li>
+                                        <li><i className="fi flaticon-send"></i>shrileelahotelresorts@gmail.com</li>
                                     </ul>
                                 </div>
                             </div>

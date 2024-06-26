@@ -20,7 +20,8 @@ const ContactpageSec = () => {
                                         </div>
                                         <div className="office-info-text">
                                             <h2>Address</h2>
-                                            <p>Indore, Madhya Pradesh</p>
+                                            <h4>Shree Leela Hotel & Resort </h4>
+                                            <p>Rajmarg, BAS STAND CHOURAHA, LOLARI, <br></br>RAJMARGH, Lolri, Madhya Pradesh 487330</p>
                                         </div>
                                     </div>
                                 </div> 
@@ -33,7 +34,7 @@ const ContactpageSec = () => {
                                         </div>
                                         <div className="office-info-text">
                                             <h2>Email Us</h2>
-                                            <p>ShreeLeela@gmail.com</p>
+                                            <p>shrileelahotelresorts@gmail.com</p>
                                             {/* <p>helloyou@gmail.com</p> */}
                                         </div>
                                     </div>
