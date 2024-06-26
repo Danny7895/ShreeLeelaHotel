@@ -21,7 +21,8 @@ const ContactpageSec = () => {
                                         <div className="office-info-text">
                                             <h2>Address</h2>
                                             <h4>Shree Leela Hotel & Resort </h4>
-                                            <p>Rajmarg, BAS STAND CHOURAHA, LOLARI, <br></br>RAJMARGH, Lolri, Madhya Pradesh 487330</p>
+                                            <p>42CH+63 RAJMARGH, BAS STAND CHOURAHA, <br/>LOLARI,
+                Madhya Pradesh 487330</p>
                                         </div>
                                     </div>
                                 </div> 

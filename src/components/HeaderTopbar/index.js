@@ -10,7 +10,7 @@ const HeaderTopbar = () => {
                         <div className="contact-intro">
                             <ul>
                                 <li><i className="fi flaticon-email"></i> ShreeLeela@gmail.com</li>
-                                <li><i className="fi flaticon-phone-call"></i> +91 (883) 9437280</li>
+                                <li><i className="fi flaticon-phone-call"></i> +91 (800) 1234567</li>
                                 <li><i className="fi ti-location-pin"></i> Madhya Pradesh </li>
                             </ul>
                         </div>

@@ -82,7 +82,8 @@ const Footer = (props) => {
                                 </div>
                                 <div className="contact-ft">
                                     <ul>
-                                        <li><i className="fi flaticon-placeholder"></i>Madhya Pradesh</li>
+                                        <li><i className="fi flaticon-placeholder"></i>42CH+63 RAJMARGH, BAS STAND CHOURAHA, <br/>LOLARI,
+                Madhya Pradesh 487330</li>
                                         <li><i className="fi flaticon-phone-call"></i>+91 8001 234567</li>
                                         <li><i className="fi flaticon-send"></i>shrileelahotelresorts@gmail.com</li>
                                     </ul>
