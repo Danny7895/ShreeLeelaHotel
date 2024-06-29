@@ -23,7 +23,7 @@ const SearchRooms = ({ products, addToCartProduct }) => {
                 <div className="col-lg-4 col-md-6 col-12" key={pitem}>
                   <div className="room-item">
                     <div className="room-img">
-                      <img src={product.proImg} alt="" />
+                      <img src={require(`../../images/room/${product.proImg}`)} alt="" />
                     </div>
                     <div className="room-content">
                       <h2><Link onClick={ClickHandler} to={`/room-single/${product.id}`}>{product.title}</Link></h2>

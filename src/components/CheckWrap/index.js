@@ -9,7 +9,7 @@ import axios from 'axios';
 import { totalPrice } from '../../utils';
 import './style.scss';
 
-const CheckWrap = ({ cartList }) => {
+const CheckWrap = ({ cartList, handlePayment }) => {
     const navigate = useNavigate();
 
     const [value, setValue] = useState({
@@ -44,6 +44,7 @@ const CheckWrap = ({ cartList }) => {
 
     const submitForm = async (e) => {
         e.preventDefault();
+        handlePayment();
 
         if (cartList.length === 0) {
             toast.error('Cart is empty.');
